@@ -21,6 +21,20 @@ class BasePage():
             return False
         return True
 
+    def get_product_name(self, how, what):
+        try:
+            name = self.browser.find_element(how, what).text
+        except NoSuchElementException:
+            return False
+        return name
+
+    def get_product_price(self, how, what):
+        try:
+            price = self.browser.find_element(how, what).text
+        except NoSuchElementException:
+            return False
+        return price
+
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
         x = alert.text.split(" ")[2]
