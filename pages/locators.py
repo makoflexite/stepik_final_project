@@ -9,4 +9,9 @@ class LoginPageLocators():
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
 
 class ProductPageLocators():
-    pass
+    ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, ".btn-add-to-basket")
+    # product = (By.CSS_SELECTOR, ".product_main>h1")
+    PRODUCT_NAME = (By.CSS_SELECTOR, ".product_main>h1")
+    PRODUCT_PRICE = (By.CSS_SELECTOR, ".product_main>p")
+    BASKET_SUM = (By.CSS_SELECTOR, ".alert-info .alertinner>p>strong")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages .alert-success  .alertinner strong")
