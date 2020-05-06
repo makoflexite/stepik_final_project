@@ -8,6 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import math
 import time
 from .locators import BasePageLocators
+from .locators import MainPageLocators
 
 class BasePage():
     def __init__(self, browser, url, timeout=10):
@@ -58,6 +59,10 @@ class BasePage():
         # link = self.browser.find_element(*BasePageLocators.LOGIN_LINK_INVALID) # *says that we gave pair of parameters and this cortege should be unpacked
         link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)  # *says that we gave pair of parameters and this cortege should be unpacked
         link.click()
+
+    def go_to_basket(self):
+        basket_button = self.browser.find_element(*MainPageLocators.BASKET_VIEW)  # *says that we gave pair of parameters and this cortege should be unpacked
+        basket_button.click()
 
     def open(self):
         self.browser.get(self.url)
