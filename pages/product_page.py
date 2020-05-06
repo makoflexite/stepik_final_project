@@ -16,6 +16,14 @@ class ProductPage(BasePage):
         """checking for message about succeed adding"""
         assert self.is_element_present(*ProductPageLocators.SUCCESS_MESSAGE), "No seccessfull message about adding"
 
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
+
+    def should_disappear_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
+
     def should_be_same_product_name_in_basket(self, name):
         """checks if product name = name in success message"""
         print("Product name is ", name, "---", " Name in success message is ", self.browser.find_element(*ProductPageLocators.SUCCESS_MESSAGE).text)
