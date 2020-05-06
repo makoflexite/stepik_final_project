@@ -19,7 +19,7 @@ class ProductPage(BasePage):
     def should_be_same_product_name_in_basket(self, name):
         """checks if product name = name in success message"""
         print("Product name is ", name, "---", " Name in success message is ", self.browser.find_element(*ProductPageLocators.SUCCESS_MESSAGE).text)
-        assert name in self.browser.find_element(*ProductPageLocators.SUCCESS_MESSAGE).text, "Other product name is written in message about adding"
+        assert name == self.browser.find_element(*ProductPageLocators.SUCCESS_MESSAGE).text, "Other product name is written in message about adding"
 
     def should_be_same_price(self, price):
         """checks if proce of product = sum in basket"""
