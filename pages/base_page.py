@@ -6,7 +6,6 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import math
-import time
 from .locators import BasePageLocators
 from .locators import MainPageLocators
 
@@ -56,7 +55,6 @@ class BasePage():
         return price
 
     def go_to_login_page(self):
-        # link = self.browser.find_element(*BasePageLocators.LOGIN_LINK_INVALID) # *says that we gave pair of parameters and this cortege should be unpacked
         link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)  # *says that we gave pair of parameters and this cortege should be unpacked
         link.click()
 
@@ -83,7 +81,6 @@ class BasePage():
             alert = self.browser.switch_to.alert
             alert_text = alert.text
             print(f"Your code: {alert_text}")
-            # time.sleep(10)
             alert.accept()
         except NoAlertPresentException:
             print("No second alert presented")

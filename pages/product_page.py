@@ -1,6 +1,5 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
-# from selenium import webdriver
 
 class ProductPage(BasePage):
     def add_to_busket(self):
